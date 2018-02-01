@@ -1,0 +1,30 @@
+format_version: 2
+pipelines:
+  "calculator-webapp":
+    group: presentations-ci-cd
+    materials:
+      cinemas-ui:
+        git: "git@github.com:Sethuraman/presentations-ci-cd-calculator-webapp.git"
+    stages:
+      - test:
+          jobs:
+            test:
+              resources:
+                - node
+              tasks:
+                - script: |
+                    npm install
+                    npm run test_with_coverage
+      - build:
+          jobs:
+            build:
+              artifacts:
+                - build:
+                    source: dist
+                    destination: dist
+              resources:
+                - node
+              tasks:
+                - script: |
+                    npm install
+                    npm run build
