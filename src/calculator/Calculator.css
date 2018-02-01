@@ -1,0 +1,32 @@
+.calculator {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid brown;
+}
+
+.display {
+    padding: 30px;
+    margin: 20px;
+    font: 1.4em sans-serif;
+    background-color: bisque;
+    text-align: right;
+}
+
+.numberPad {
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));
+}
+
+.operationPad {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    font: 2em sans-serif;
+    padding: 20px;
+    margin: 5px;
+}
