@@ -3,7 +3,7 @@ pipelines:
   "calculator-webapp":
     group: presentations-ci-cd
     materials:
-      cinemas-ui:
+      calculator-webapp:
         git: "git@github.com:Sethuraman/presentations-ci-cd-calculator-webapp.git"
     stages:
       - test:
