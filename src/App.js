@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { Calculator } from './calculator';
 import './App.css';
 
@@ -10,9 +9,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Calculator</h1>
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           <Calculator />
-        </p>
+        </div>
       </div>
     );
   }
