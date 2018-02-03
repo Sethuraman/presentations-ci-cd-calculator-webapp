@@ -11,7 +11,7 @@ const Display = (props) => (
 );
 
 const Button = (props) => (
-    <button className="button" onClick={props.click}> 
+    <button className="button" onClick={props.click} id={props.id}>
         {props.text}
     </button>
 );
@@ -26,7 +26,7 @@ const NumberPad = (props) => (
 const OpertionPad = (props) => (
     <div className="operationPad">
         {["+", "-", "*", "/", "="].map(operation =>
-            <Button key={operation} text={operation} click={() => props.operation(operation, props.calculator)} />
+            <Button key={operation} text={operation} id={operation} click={() => props.operation(operation, props.calculator)} />
         )}
     </div>    
 );
