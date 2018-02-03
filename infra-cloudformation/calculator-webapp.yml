@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Creates S3 website bucket for storing static HTML + JS + CSS files of the presentations ci cd calculator web app
+
+Parameters:
+  stage:
+    Type: String
+    Default: staging
+    AllowedValues:
+      - staging
+      - prod
+    Description: Enter staging or prod.
+
+Resources:
+  AcustockWebAppS3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Join [ "-", [ "calculator-web-app", Ref: stage ] ]
+      WebsiteConfiguration:
+        IndexDocument: index.html
+  AcustockWebAppS3BucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket:
+        Ref: "CalculatorWebAppS3Bucket"
+      PolicyDocument:
+        Statement:
+          -
+            Action:
+              - "s3:GetObject"
+            Effect: "Allow"
+            Resource:
+              Fn::Join:
+                - ""
+                -
+                  - "arn:aws:s3:::"
+                  -
+                    Ref: "CalculatorWebAppS3Bucket"
+                  - "/*"
+            Principal: "*"
