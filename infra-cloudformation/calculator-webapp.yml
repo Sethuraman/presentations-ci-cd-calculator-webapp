@@ -11,13 +11,13 @@ Parameters:
     Description: Enter staging or prod.
 
 Resources:
-  AcustockWebAppS3Bucket:
+  CalculatorWebAppS3Bucket:
     Type: "AWS::S3::Bucket"
     Properties:
       BucketName: !Join [ "-", [ "calculator-web-app", Ref: stage ] ]
       WebsiteConfiguration:
         IndexDocument: index.html
-  AcustockWebAppS3BucketPolicy:
+  CalculatorWebAppS3BucketPolicy:
     Type: "AWS::S3::BucketPolicy"
     Properties:
       Bucket:
