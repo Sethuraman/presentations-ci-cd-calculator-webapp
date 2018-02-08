@@ -6,6 +6,7 @@ Parameters:
     Type: String
     Default: staging
     AllowedValues:
+      - development
       - staging
       - prod
     Description: Enter staging or prod.
